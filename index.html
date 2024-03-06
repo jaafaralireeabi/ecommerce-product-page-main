@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="fontawesome-free-6.0.0-web/css/all.min.css">
+  <link rel="stylesheet" href="fontawesome-free-6.0.0-web/webfonts">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="con">
+    <header>
+      <nav>
+        <div class="menuBar">
+          <img src="images/icon-menu.svg" alt="">
+        </div>
+        <div class="logo">
+          Sneaker
+        </div>
+        <ul>
+          <div class="close">
+            <img src="images/icon-close.svg" alt="">
+          </div>
+          <li>
+            <a href="#">
+              Collections
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Men
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Women
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <div class="basket">
+          <img src="images/icon-cart.svg" alt="">
+          <div class="box">
+            <div class="title">
+              cart
+            </div>
+            <div class="products">
+              your cart is empyt 
+            </div>
+          </div>
+        </div>
+        <div class="photoPerson">
+          <img src="images/image-avatar.png" alt="">
+        </div>
+      </div>
+    </header>
+    <!-- landing -->
+    <div class="landing">
+      <div class="images">
+        <div class="show">
+          <div class="previous">
+            <img src="images/icon-previous.svg" alt="">
+          </div>
+          <div class="next">
+            <img src="images/icon-next.svg" alt="">
+          </div>
+          <img class="photoShow" src="images/image-product-1.jpg" alt="">
+        </div>
+        <div class="products">
+          <img src="images/image-product-1.jpg" alt="" class="active">
+          <img src="images/image-product-2.jpg" alt="">
+          <img src="images/image-product-3.jpg" alt="">
+          <img src="images/image-product-4.jpg" alt="">
+        </div>
+      </div>
+      <div class="dscribe">
+        <div class="companyName">
+          Sneaker Company
+        </div>
+        <div class="productName">
+          Fall Limited Edition Sneakers
+        </div>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <div class="cost">
+          <div class="costResult">
+            <div class="result">
+              $125.00
+            </div>
+            <div class="discount">
+              50%
+            </div>
+          </div>
+          <div class="Original">
+            $250.00
+          </div>
+        </div>
+        <div class="buy">
+          <div class="counter">
+            <img src="images/icon-minus.svg" alt="" class="minus">
+            <div class="number">
+              0
+            </div>
+            <img src="images/icon-plus.svg" alt="" class="plus">
+          </div>
+          <div class="add">
+            <i class="fa-solid fa-cart-shopping"></i>            
+            Add to cart
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
