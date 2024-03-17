@@ -6,6 +6,7 @@ let ul = document.querySelector("header nav ul");
 let iconClose = document.querySelector(".close");
 let basket = document.querySelector(".basket");
 let box = document.querySelector("header .cart .basket .box");
+let products = document.querySelector("header .cart .basket .box .products");
 let photoShow = document.querySelector(".photoShow");
 let listProducts = document.querySelectorAll(".images .products img");
 let images = document.querySelector(".landing .images");
@@ -21,6 +22,42 @@ let previous = document.querySelector(".previous");
 let next = document.querySelector(".next");
 let landing = document.querySelector(".landing");
 let header = document.querySelector("header");
+
+class Product{
+    constructor(){
+        this.name = "Fall Limited Edition Sneakers";
+        this.image = "images/image-product-1-thumbnail.jpg";
+        this.cost = 125;
+        this.quantity = 3;
+    }
+    setName(name) {
+        this.name = name;
+    }
+    setImage(image) {
+        this.image = image;
+    }
+    setCost(cost) {
+        this.cost = cost;
+    }
+    setQuantity(quantity) {
+        this.quantity = quantity;
+    }
+    getName() {
+        return this.name;
+    }
+    getImage() {
+        return this.image;
+    }
+    getCost() {
+        return this.cost;
+    }
+    getQuantity() {
+        return this.quantity;
+    }
+    calculateCostTotal(){
+        return this.cost*this.quantity;
+    }
+}
 
 function openOverlay(overlay) {
     overlay.classList.add("block");
@@ -76,7 +113,25 @@ function nextPhoto() {
     }
 }
 
-
+function createEl(tagName,className="",text="",attributeNames=[],attributeValues=[],childerns=[]){
+    let el = document.createElement(tagName);
+    className.split(" ").forEach(cl => {
+        el.classList.add(cl);
+    });
+    el.innerHTML = text;
+    let attributeLen = attributeNames.length;
+    for (let i = 0; i < attributeLen; i++) {
+        const attributeName = attributeNames[i];
+        const attributeValue = attributeValues[i]
+        el.setAttribute(attributeName,attributeValue);
+    }
+    if (childerns.length!==0){
+        childerns.forEach(ch=>{
+            el.appendChild(ch);
+        });
+    }
+    return el;
+}
 menuBar.onclick = function () {
     openUl(ul);
     openOverlay(overlay);
@@ -185,4 +240,26 @@ plus.onclick = function () {
     number.innerHTML++;
 }
 
-cl
+add.addEventListener("click",e=>{
+    let product = new Product();
+    if (document.querySelector(".products").contains(document.querySelector(".empyt"))) {
+        document.querySelector(".products .empyt").remove();
+    }
+    product.setQuantity(number.innerHTML);
+    let srcImage = product.getImage();
+    let Elimage = createEl("img","image","",["src"],[srcImage]);
+    let productName = createEl("p","productName",product.getName());
+    let coin = createEl("i","fa-solid fa-dollar-sign");
+    let cost = createEl("p","cost",product.getCost(),[],[],[coin]);
+    let cross = createEl("img","cross","",["src"],["images/icon-close.svg"]);
+    let quantity = createEl("p","quantity",product.getQuantity());
+    let conCost = createEl("div","conCost","",[],[],[coin,cost,cross,quantity]);
+    let costTotal = createEl("p","costTotal",product.calculateCostTotal());
+    let conCostAndCostTotal = createEl("div","conCostTotal","",[],[],[conCost,costTotal]);
+    let Eldescribe = createEl("div","describe","",[],[],[productName,conCostAndCostTotal]);
+    let del = createEl("img","delete","",["src"],["images/icon-delete.svg"],[]);
+    let Elproduct = createEl("div","product","",[],[],[Elimage,Eldescribe,del]);
+    
+    products.appendChild(Elproduct);
+
+});

@@ -191,11 +191,10 @@ header .cart .basket {
 }
 header .cart .basket .box {
     position: fixed;
-    bottom: 50%;
-    right: 5%;
+    right: 10px;
     background-color: #fff;
-    width: 250px;
-    height: 200px;
+    width: 500px;
+    height: 300px;
     box-shadow: 1px 1px 10px #000;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -225,18 +224,60 @@ header .cart .basket .box .title {
     border-bottom: 1px #ddd solid;
 }
 header .cart .basket .box .products {
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     color: var(--textColor);
-    width: fit-content;
+    width: 100%;
     font-weight: 300;
+    text-wrap: nowrap;
+    height: 100%;
+    padding: var(--paddingMain);
 }
+.box .products .product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.box .products .product img.image {
+    width: 50px;
+    height: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.conCostTotal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+.conCost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--textColor);
+    font-weight: bold;
+}
+.box .products .product .conCostTotal .costTotal {
+    color: #000;
+    font-weight: bold;
+}
+p.productName {
+    color: var(--textColor);
+    font-weight: bold;
+}
+
 header .cart .photoPerson {
     cursor: pointer;
     border-radius: 50%;
